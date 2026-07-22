@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\My_First.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\My_First.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\My_FirstEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\My_First">
+      <UniqueIdentifier>{34F02548-5D9A-3082-8BAC-22AD208BA4EB}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\My_First\My_First.Build.cs">
+      <Filter>Source\My_First</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\My_First\My_First.cpp">
+      <Filter>Source\My_First</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\My_First\My_First.h">
+      <Filter>Source\My_First</Filter>
+    </ClCompile>
+    <Filter Include="Source\My_First\Private">
+      <UniqueIdentifier>{9417864E-7963-375B-AD97-6FA21545FC3C}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\My_First\Private\MyGameMode.cpp">
+      <Filter>Source\My_First\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\My_First\Private\MyGameModeBase.cpp">
+      <Filter>Source\My_First\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\My_First\Private\MyGameState.cpp">
+      <Filter>Source\My_First\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\My_First\Private\MyHUD.cpp">
+      <Filter>Source\My_First\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\My_First\Private\MyPawn.cpp">
+      <Filter>Source\My_First\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\My_First\Private\MyPlayerController.cpp">
+      <Filter>Source\My_First\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\My_First\Private\MyPlayerState.cpp">
+      <Filter>Source\My_First\Private</Filter>
+    </ClCompile>
+    <Filter Include="Source\My_First\Public">
+      <UniqueIdentifier>{99A90621-87DE-3024-A8D0-EC622C82CAA8}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\My_First\Public\MyGameMode.h">
+      <Filter>Source\My_First\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\My_First\Public\MyGameModeBase.h">
+      <Filter>Source\My_First\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\My_First\Public\MyGameState.h">
+      <Filter>Source\My_First\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\My_First\Public\MyHUD.h">
+      <Filter>Source\My_First\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\My_First\Public\MyPawn.h">
+      <Filter>Source\My_First\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\My_First\Public\MyPlayerController.h">
+      <Filter>Source\My_First\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\My_First\Public\MyPlayerState.h">
+      <Filter>Source\My_First\Public</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

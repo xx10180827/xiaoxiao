@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"D:\\UE5_My_Project\\My_First\\Source\\My_First\\My_First.Build.cs",
+		"D:\\UE5_My_Project\\My_First\\Source\\My_First.Target.cs",
+		"D:\\UE5_My_Project\\My_First\\Source\\My_FirstEditor.Target.cs"
+	],
+	"EngineVersion": "5.5.4"
+}
