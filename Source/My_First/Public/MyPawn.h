@@ -3,6 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include"MyObject.h"
+#include"MyGameInstance.h"
 #include "GameFramework/Pawn.h"
 #include "MyPawn.generated.h"
 
@@ -18,11 +20,11 @@ namespace MyEnumType
 	};
 }
 
-//UE�ṹ������
+//UE结构体的使用
 USTRUCT(BlueprintType)
 struct FMyTeststruct
 {
-	GENERATED_USTRUCT_BODY();
+	GENERATED_USTRUCT_BODY()
     
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MytestStruct")
 	int32 Health;
@@ -126,8 +128,17 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MyEnum")
 	TEnumAsByte<MyEnumType::MyEnum> MyEnum;
         
-	//UE�
+	//UE创建一个结构体变量
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FMyTeststruct MyStruct;
+    
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MyExposeOnSpawn",meta = (ExposeOnspawn = "ExposeOnSpawnValue"))
+		float MyHealth;
+       
+    UPROPERTY()
+	UMyObject* MyTsetObjectClass;
+    
+    UPROPERTY()
+	UMyGameInstance* MyGameInstance;
 };
  

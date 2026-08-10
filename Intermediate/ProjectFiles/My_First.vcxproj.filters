@@ -11,7 +11,10 @@
     <None Include="..\..\Source\My_FirstEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <None Include="..\..\.vsconfig" />
+    <None Include="..\..\README.md" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -42,6 +45,12 @@
     <Filter Include="Source\My_First\Private">
       <UniqueIdentifier>{9417864E-7963-375B-AD97-6FA21545FC3C}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\My_First\Private\MyActor.cpp">
+      <Filter>Source\My_First\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\My_First\Private\MyGameInstance.cpp">
+      <Filter>Source\My_First\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\My_First\Private\MyGameMode.cpp">
       <Filter>Source\My_First\Private</Filter>
     </ClCompile>
@@ -52,6 +61,9 @@
       <Filter>Source\My_First\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\My_First\Private\MyHUD.cpp">
+      <Filter>Source\My_First\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\My_First\Private\MyObject.cpp">
       <Filter>Source\My_First\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\My_First\Private\MyPawn.cpp">
@@ -66,6 +78,12 @@
     <Filter Include="Source\My_First\Public">
       <UniqueIdentifier>{99A90621-87DE-3024-A8D0-EC622C82CAA8}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\My_First\Public\MyActor.h">
+      <Filter>Source\My_First\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\My_First\Public\MyGameInstance.h">
+      <Filter>Source\My_First\Public</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\My_First\Public\MyGameMode.h">
       <Filter>Source\My_First\Public</Filter>
     </ClCompile>
@@ -76,6 +94,9 @@
       <Filter>Source\My_First\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\My_First\Public\MyHUD.h">
+      <Filter>Source\My_First\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\My_First\Public\MyObject.h">
       <Filter>Source\My_First\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\My_First\Public\MyPawn.h">
