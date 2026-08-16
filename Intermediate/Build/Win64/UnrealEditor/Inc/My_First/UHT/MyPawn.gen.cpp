@@ -12,6 +12,9 @@ void EmptyLinkFunctionForGeneratedCodeMyPawn() {}
 // Begin Cross Module References
 COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 ENGINE_API UClass* Z_Construct_UClass_APawn();
+ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
+ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
+ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 MY_FIRST_API UClass* Z_Construct_UClass_AMyPawn();
 MY_FIRST_API UClass* Z_Construct_UClass_AMyPawn_NoRegister();
 MY_FIRST_API UClass* Z_Construct_UClass_UMyGameInstance_NoRegister();
@@ -832,6 +835,27 @@ struct Z_Construct_UClass_AMyPawn_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MyGameInstance_MetaData[] = {
 		{ "ModuleRelativePath", "Public/MyPawn.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MySpringArm_MetaData[] = {
+		{ "Category", "MySceneComponent" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//\xe5\x88\x9b\xe5\xbb\xba\xe6\x91\x84\xe5\x83\x8f\xe6\x9c\xba\xe6\x91\x87\xe8\x87\x82\n" },
+#endif
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/MyPawn.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xe5\x88\x9b\xe5\xbb\xba\xe6\x91\x84\xe5\x83\x8f\xe6\x9c\xba\xe6\x91\x87\xe8\x87\x82" },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MyCamera_MetaData[] = {
+		{ "Category", "MySceneComponent" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/MyPawn.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MyRoot_MetaData[] = {
+		{ "Category", "MySceneComponent" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/MyPawn.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp_VisibleDefaultOnlyInt;
 	static const UECodeGen_Private::FStrPropertyParams NewProp_VisibleInstanceOnlyFstirng;
@@ -853,6 +877,9 @@ struct Z_Construct_UClass_AMyPawn_Statics
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_MyHealth;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_MyTsetObjectClass;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_MyGameInstance;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_MySpringArm;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_MyCamera;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_MyRoot;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -899,6 +926,9 @@ const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AMyPawn_Static
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMyPawn_Statics::NewProp_MyHealth = { "MyHealth", nullptr, (EPropertyFlags)0x0011000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyPawn, MyHealth), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MyHealth_MetaData), NewProp_MyHealth_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyPawn_Statics::NewProp_MyTsetObjectClass = { "MyTsetObjectClass", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyPawn, MyTsetObjectClass), Z_Construct_UClass_UMyObject_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MyTsetObjectClass_MetaData), NewProp_MyTsetObjectClass_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyPawn_Statics::NewProp_MyGameInstance = { "MyGameInstance", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyPawn, MyGameInstance), Z_Construct_UClass_UMyGameInstance_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MyGameInstance_MetaData), NewProp_MyGameInstance_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyPawn_Statics::NewProp_MySpringArm = { "MySpringArm", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyPawn, MySpringArm), Z_Construct_UClass_USpringArmComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MySpringArm_MetaData), NewProp_MySpringArm_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyPawn_Statics::NewProp_MyCamera = { "MyCamera", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyPawn, MyCamera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MyCamera_MetaData), NewProp_MyCamera_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyPawn_Statics::NewProp_MyRoot = { "MyRoot", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyPawn, MyRoot), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MyRoot_MetaData), NewProp_MyRoot_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMyPawn_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyPawn_Statics::NewProp_VisibleDefaultOnlyInt,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyPawn_Statics::NewProp_VisibleInstanceOnlyFstirng,
@@ -918,6 +948,9 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMyPawn_S
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyPawn_Statics::NewProp_MyHealth,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyPawn_Statics::NewProp_MyTsetObjectClass,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyPawn_Statics::NewProp_MyGameInstance,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyPawn_Statics::NewProp_MySpringArm,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyPawn_Statics::NewProp_MyCamera,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyPawn_Statics::NewProp_MyRoot,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMyPawn_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AMyPawn_Statics::DependentSingletons[])() = {
@@ -966,10 +999,10 @@ struct Z_CompiledInDeferFile_FID_UE5_My_Project_My_First_Source_My_First_Public_
 		{ FMyTeststruct::StaticStruct, Z_Construct_UScriptStruct_FMyTeststruct_Statics::NewStructOps, TEXT("MyTeststruct"), &Z_Registration_Info_UScriptStruct_MyTeststruct, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FMyTeststruct), 3316446830U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMyPawn, AMyPawn::StaticClass, TEXT("AMyPawn"), &Z_Registration_Info_UClass_AMyPawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyPawn), 3980805060U) },
+		{ Z_Construct_UClass_AMyPawn, AMyPawn::StaticClass, TEXT("AMyPawn"), &Z_Registration_Info_UClass_AMyPawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyPawn), 2583739933U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_4268930222(TEXT("/Script/My_First"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_1351220168(TEXT("/Script/My_First"),
 	Z_CompiledInDeferFile_FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_Statics::ClassInfo),
 	Z_CompiledInDeferFile_FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_Statics::ScriptStructInfo),
 	Z_CompiledInDeferFile_FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_Statics::EnumInfo));

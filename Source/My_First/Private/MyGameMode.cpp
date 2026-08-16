@@ -5,13 +5,13 @@
 
 AMyGameMode::AMyGameMode()
 {
+
 	DefaultPawnClass = AMyPawn::StaticClass();
 	PlayerControllerClass = AMyPlayerController::StaticClass();
 	GameStateClass = AMyGameState::StaticClass();
 	PlayerStateClass = AMyPlayerState::StaticClass();
 	HUDClass = AMyHUD::StaticClass();
 }
-
 void AMyGameMode::BeginPlay()
 {
 	Super::BeginPlay();

@@ -9,7 +9,15 @@ AMyPawn::AMyPawn()
 {
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
+	MyRoot = CreateDefaultSubobject<USceneComponent>(TEXT("MyRootComponent"));
+	MySpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("MySpringArmComponent"));
+	MyCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("MyCameraComponent"));
+	RootComponent = MyRoot;
+	//设置摇臂的父组件为根组件
+	MySpringArm->SetupAttachment(MyRoot);
+	//设置摄像机的父组件为摇臂组件
+	MyCamera->SetupAttachment(MySpringArm);
+	MySpringArm->bDoCollisionTest = false;//设置摇臂组件不进行碰撞检测
 }
 
 // Called when the game starts or when spawned
@@ -35,10 +43,15 @@ void AMyPawn::BeginPlay()
 		UE_LOG(LogTemp, Warning, TEXT("My Name is %s"), *MyGameInstance->MyName);
 		UE_LOG(LogTemp, Warning, TEXT("My UserId is %s"), *MyGameInstance->MyUserID);
 	}
-	
+	FVector MyLocation = FVector(0, 0, 0);		//初始化Vector数组用于设置初始位置
+	FRotator MyRotator = FRotator(-50, 0, 0);
+	FVector MyScale = FVector(1, 1, 1);
+	SetActorLocation(MyLocation);		//设置初始位置
+	SetActorRotation(MyRotator);
+	SetActorScale3D(MyScale);
 }
 
-// Called every frame
+// Called every frame 
 void AMyPawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
@@ -83,4 +96,24 @@ int AMyPawn::TestD_Implementation(const FString& mystring)
 
 void AMyPawn::PrintTest()
 {
+}
+
+void AMyPawn::Zoom(bool Direction, float ZoomSpeed)
+{
+	if (Direction)	//为真增加
+	{
+		if (MySpringArm->TargetArmLength >= 300 && MySpringArm->TargetArmLength < 5000)
+		{
+			MySpringArm->TargetArmLength += (ZoomSpeed * 2);
+			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Blue, FString::Printf(TEXT("MyArmLength is %f"), MySpringArm->TargetArmLength));
+		}
+	}
+	else			//为假减少
+	{
+		if (MySpringArm->TargetArmLength > 300 && MySpringArm->TargetArmLength <= 5000)
+		{
+			MySpringArm->TargetArmLength -= (ZoomSpeed * 2);
+			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Blue, FString::Printf(TEXT("MyArmLength is %f"), MySpringArm->TargetArmLength));
+		}
+	}
 }

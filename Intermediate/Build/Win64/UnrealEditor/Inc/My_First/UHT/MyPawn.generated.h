@@ -14,14 +14,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define MY_FIRST_MyPawn_generated_h
 
-#define FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_27_GENERATED_BODY \
+#define FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_30_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FMyTeststruct_Statics; \
 	MY_FIRST_API static class UScriptStruct* StaticStruct();
 
 
 template<> MY_FIRST_API UScriptStruct* StaticStruct<struct FMyTeststruct>();
 
-#define FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_38_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_41_RPC_WRAPPERS_NO_PURE_DECLS \
 	virtual int32 TestD_Implementation(const FString& mystring); \
 	virtual void TestC_Implementation(const FString& mystring); \
 	virtual int32 TestB_Implementation(); \
@@ -35,8 +35,8 @@ template<> MY_FIRST_API UScriptStruct* StaticStruct<struct FMyTeststruct>();
 	DECLARE_FUNCTION(execPrintF1);
 
 
-#define FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_38_CALLBACK_WRAPPERS
-#define FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_38_INCLASS_NO_PURE_DECLS \
+#define FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_41_CALLBACK_WRAPPERS
+#define FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_41_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMyPawn(); \
 	friend struct Z_Construct_UClass_AMyPawn_Statics; \
@@ -45,7 +45,7 @@ public: \
 	DECLARE_SERIALIZER(AMyPawn)
 
 
-#define FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_38_ENHANCED_CONSTRUCTORS \
+#define FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_41_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AMyPawn(AMyPawn&&); \
@@ -57,14 +57,14 @@ public: \
 	NO_API virtual ~AMyPawn();
 
 
-#define FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_35_PROLOG
-#define FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_38_GENERATED_BODY \
+#define FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_38_PROLOG
+#define FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_41_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_38_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_38_CALLBACK_WRAPPERS \
-	FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_38_INCLASS_NO_PURE_DECLS \
-	FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_38_ENHANCED_CONSTRUCTORS \
+	FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_41_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_41_CALLBACK_WRAPPERS \
+	FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_41_INCLASS_NO_PURE_DECLS \
+	FID_UE5_My_Project_My_First_Source_My_First_Public_MyPawn_h_41_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

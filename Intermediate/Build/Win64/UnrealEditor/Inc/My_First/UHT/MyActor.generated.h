@@ -9,10 +9,19 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
+class UPrimitiveComponent;
+struct FHitResult;
 #ifdef MY_FIRST_MyActor_generated_h
 #error "MyActor.generated.h already included, missing '#pragma once' in MyActor.h"
 #endif
 #define MY_FIRST_MyActor_generated_h
+
+#define FID_UE5_My_Project_My_First_Source_My_First_Public_MyActor_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execHitFunction); \
+	DECLARE_FUNCTION(execEndOverlap); \
+	DECLARE_FUNCTION(execBeginOverlap);
+
 
 #define FID_UE5_My_Project_My_First_Source_My_First_Public_MyActor_h_17_INCLASS_NO_PURE_DECLS \
 private: \
@@ -39,6 +48,7 @@ public: \
 #define FID_UE5_My_Project_My_First_Source_My_First_Public_MyActor_h_17_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
+	FID_UE5_My_Project_My_First_Source_My_First_Public_MyActor_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
 	FID_UE5_My_Project_My_First_Source_My_First_Public_MyActor_h_17_INCLASS_NO_PURE_DECLS \
 	FID_UE5_My_Project_My_First_Source_My_First_Public_MyActor_h_17_ENHANCED_CONSTRUCTORS \
 private: \

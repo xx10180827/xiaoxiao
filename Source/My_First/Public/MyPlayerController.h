@@ -14,4 +14,10 @@ class MY_FIRST_API AMyPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 	
+public:
+	//ÖØÐ´°´¼ü°ó¶¨
+	virtual void SetupInputComponent();
+	void WheelupFunction();
+	void WheeldownFunction();
+
 };

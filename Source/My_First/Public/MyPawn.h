@@ -6,6 +6,9 @@
 #include"MyObject.h"
 #include"MyGameInstance.h"
 #include "GameFramework/Pawn.h"
+#include "GameFramework/SpringArmComponent.h"
+#include "GameFramework/Pawn.h"
+#include "Camera/CameraComponent.h"
 #include "MyPawn.generated.h"
 
 //UEö������
@@ -140,5 +143,17 @@ public:
     
     UPROPERTY()
 	UMyGameInstance* MyGameInstance;
+
+	public:
+	//创建摄像机摇臂
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "MySceneComponent");
+	USpringArmComponent* MySpringArm;	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "MySceneComponent");
+	UCameraComponent* MyCamera;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "MySceneComponent");
+	USceneComponent* MyRoot;
+
+	//滚轮实现摄像机缩放
+	void Zoom(bool Direction, float ZoomSpeed);
 };
  

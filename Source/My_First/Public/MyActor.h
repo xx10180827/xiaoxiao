@@ -31,11 +31,22 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "MySceneComponents")
 	class USceneComponent* MySceneComponent;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "MySceneComponents")
-	class UStaticMeshComponent* MyMeshComponent;
+	class UStaticMeshComponent* MyMeshComponent;//静态网格组件
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "MySceneComponents")
-	class UBoxComponent* MyBoxComponent;
+	class UBoxComponent* MyBoxComponent;//碰撞盒组件
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "MySceneComponents")
 	class UParticleSystemComponent* MyParticleSystemComponent;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "MySceneComponents")
 	class UAudioComponent* MyAudioComponent;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Myclass")
+	TSubclassOf<AActor> MyActor;
+
+	UFUNCTION()
+	void BeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+	UFUNCTION()
+	void EndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+
+	//设置碰撞函数
+	UFUNCTION()
+	void HitFunction(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 };
