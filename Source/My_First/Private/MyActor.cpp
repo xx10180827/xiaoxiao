@@ -34,19 +34,24 @@ AMyActor::AMyActor()
 
     //碰撞设置
     MyBoxComponent->SetCollisionEnabled(ECollisionEnabled::QueryOnly);		//仅查询碰撞（如射线检测）
-    MyBoxComponent->SetCollisionEnabled(ECollisionEnabled::ProbeOnly);		//仅探测碰撞（如触发器）
-    MyBoxComponent->SetCollisionEnabled(ECollisionEnabled::PhysicsOnly);		//仅物理碰撞（如刚体模拟）
-    MyBoxComponent->SetCollisionEnabled(ECollisionEnabled::QueryAndProbe);		//同时启用查询和探测碰撞
+    //MyBoxComponent->SetCollisionEnabled(ECollisionEnabled::ProbeOnly);		//仅探测碰撞（如触发器）
+    //MyBoxComponent->SetCollisionEnabled(ECollisionEnabled::PhysicsOnly);		//仅物理碰撞（如刚体模拟）
+    //MyBoxComponent->SetCollisionEnabled(ECollisionEnabled::QueryAndProbe);		//同时启用查询和探测碰撞
 
 	//碰撞对象类型设置
-	MyBoxComponent->SetCollisionObjectType(ECC_Pawn);	//碰撞对象类型设置为Pawn
-	MyBoxComponent->SetCollisionObjectType(ECC_Destructible);	//碰撞对象类型设置为Destructible
+	//MyBoxComponent->SetCollisionObjectType(ECC_Pawn);	//碰撞对象类型设置为Pawn
+	//MyBoxComponent->SetCollisionObjectType(ECC_Destructible);	//碰撞对象类型设置为Destructible
+	MyBoxComponent->SetCollisionObjectType(ECC_WorldDynamic);//碰撞对象类型设置为世界动态
 
 	//碰撞响应设置
-	MyBoxComponent->SetCollisionResponseToAllChannels(ECR_Block);		//所有通道阻挡
-	MyBoxComponent->SetCollisionResponseToChannel(ECC_Pawn, ECR_Ignore); //忽略Pawn通道
-	MyBoxComponent->SetCollisionResponseToChannel(ECC_WorldStatic, ECR_Block);//阻挡WorldStatic通道
-	MyBoxComponent->SetCollisionResponseToChannel(ECC_WorldDynamic, ECR_Ignore);//忽略WorldDynamic通道
+	MyBoxComponent->SetCollisionResponseToAllChannels(ECR_Overlap);	//所有通道重叠检测
+	//MyBoxComponent->SetCollisionResponseToAllChannels(ECR_Block);		//所有通道阻挡
+	//MyBoxComponent->SetCollisionResponseToChannel(ECC_Pawn, ECR_Ignore); //忽略Pawn通道
+	//MyBoxComponent->SetCollisionResponseToChannel(ECC_WorldStatic, ECR_Block);//阻挡WorldStatic通道
+	//MyBoxComponent->SetCollisionResponseToChannel(ECC_WorldDynamic, ECR_Ignore);//忽略WorldDynamic通道
+	
+	//设置BoxComponent的大小
+	MyBoxComponent->SetBoxExtent(FVector(64, 64, 64));	//设置碰撞盒的大小为64
     
 }
 
@@ -54,6 +59,13 @@ AMyActor::AMyActor()
 void AMyActor::BeginPlay()
 {
 	Super::BeginPlay();
+
+	//判断粒子特效是否激活 如果激活则停止激活
+	if (MyParticleSystemComponent)
+	{
+		MyParticleSystemComponent->Deactivate();
+	}
+
 	if (MyActor)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("MyActor is %s"), *MyActor->GetName());//判断MyActor是否为空，如果不为空则输出MyActor的名字
@@ -92,11 +104,21 @@ void AMyActor::Tick(float DeltaTime)
 
 void AMyActor::BeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+	//激活粒子特效
+	if (MyParticleSystemComponent)
+	{
+		MyParticleSystemComponent->Activate();
+	}
 	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("BeginOverlap"));
 }
 
 void AMyActor::EndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
+	//停止粒子特效
+	if (MyParticleSystemComponent)
+	{
+		MyParticleSystemComponent->Deactivate();
+	}
 	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("EndOverlap"));
 }
 

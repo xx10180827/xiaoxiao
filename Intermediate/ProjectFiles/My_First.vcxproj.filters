@@ -48,6 +48,12 @@
     <ClCompile Include="..\..\Source\My_First\Private\MyActor.cpp">
       <Filter>Source\My_First\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\My_First\Private\MyBullet.cpp">
+      <Filter>Source\My_First\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\My_First\Private\MyDelegateActor.cpp">
+      <Filter>Source\My_First\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\My_First\Private\MyGameInstance.cpp">
       <Filter>Source\My_First\Private</Filter>
     </ClCompile>
@@ -75,10 +81,19 @@
     <ClCompile Include="..\..\Source\My_First\Private\MyPlayerState.cpp">
       <Filter>Source\My_First\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\My_First\Private\MyUserWidget.cpp">
+      <Filter>Source\My_First\Private</Filter>
+    </ClCompile>
     <Filter Include="Source\My_First\Public">
       <UniqueIdentifier>{99A90621-87DE-3024-A8D0-EC622C82CAA8}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\My_First\Public\MyActor.h">
+      <Filter>Source\My_First\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\My_First\Public\MyBullet.h">
+      <Filter>Source\My_First\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\My_First\Public\MyDelegateActor.h">
       <Filter>Source\My_First\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\My_First\Public\MyGameInstance.h">
@@ -106,6 +121,9 @@
       <Filter>Source\My_First\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\My_First\Public\MyPlayerState.h">
+      <Filter>Source\My_First\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\My_First\Public\MyUserWidget.h">
       <Filter>Source\My_First\Public</Filter>
     </ClCompile>
   </ItemGroup>

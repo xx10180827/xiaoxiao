@@ -35,7 +35,7 @@ void AMyPawn::BeginPlay()
 		UE_LOG(LogTemp, Warning, TEXT("My Value is %f"), MyTsetObjectClass->MyDataTableStruct.Value);
 	}
 	
-	MyGameInstance = Cast<UMyGameInstance>(GetWorld()->GetFirstPlayerController()->GetGameInstance());
+	MyGameInstance = Cast<UMyGameInstance>(GetWorld()->GetFirstPlayerController()->GetGameInstance());//获取游戏实例
 	if (MyGameInstance)//判断是否创建成功
 	{
 		UE_LOG(LogTemp, Warning, TEXT("MyGameInstance is %s"), *MyGameInstance->GetName());

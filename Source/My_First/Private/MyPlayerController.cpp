@@ -2,6 +2,7 @@
 
 #include "MyPawn.h"
 #include "MyPlayerController.h"
+#include "Blueprint/UserWidget.h"
 
 void AMyPlayerController::SetupInputComponent()
 {
@@ -24,9 +25,17 @@ void AMyPlayerController::WheelupFunction()
 
 void AMyPlayerController::WheeldownFunction()
 {
-	AMyPawn* MyCameraPawn = GetPawn<AMyPawn>();
+	AMyPawn* MyCameraPawn = GetPawn<AMyPawn>(); 
 	if (MyCameraPawn)
 	{
 		MyCameraPawn->Zoom(0, 10);
 	}
+}
+
+void AMyPlayerController::BeginPlay()
+{
+	Super::BeginPlay();
+	UClass* MyWidget = LoadClass<UUserWidget>(NULL, TEXT("/Script/UMGEditor.WidgetBlueprint'/Game/BP_MyUMG.BP_MyUMG_C'"));
+	UUserWidget* MyWidgetClass = CreateWidget<UUserWidget>(GetWorld(), MyWidget);//´´½¨UMG
+	MyWidgetClass->AddToViewport();
 }
